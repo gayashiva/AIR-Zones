@@ -1,7 +1,7 @@
 # AIR-Zones
 Quantifying suitability of regions to achieve winter water storage using artificial ice reservoirs (AIRs)
 
-1. Extract water tower units (WTUs) from 
+1. Extract water tower units (WTUs) from [Immerzeel et. al.](https://www.nature.com/articles/s41586-019-1822-y)
 2. Download high resolution DEM from 
   - a. Downscale it to the WTUs
 3. Download long-term monthly mean temperature dataset from 
