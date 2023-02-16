@@ -3,10 +3,10 @@ Quantifying suitability of regions to achieve winter water storage using artific
 
 1. Extract water tower units (WTUs) from 
 2. Download high resolution DEM from 
-  a. Downscale it to the WTUs
+  - a. Downscale it to the WTUs
 3. Download long-term monthly mean temperature dataset from 
-  a. Downscale it to WTUs
-  b. Perform altitude correction of the temperature dataset
+  - a. Downscale it to WTUs
+  - b. Perform altitude correction of the temperature dataset
 
 ## Notebooks
 - [test_W5E5_quality.ipynb](docs/test_W5E5_quality.ipynb): 
