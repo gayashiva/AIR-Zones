@@ -29,7 +29,7 @@ temperature_ds = xr.open_dataset('data/tasmin_W5E5v2.0_20110101-20191231.nc')
 humidity_ds = xr.open_dataset('data/hurs_W5E5v2.0_20110101-20191231.nc')
 
 # Extract the temperature and humidity data variables for the year 2001
-temperature = temperature_ds['tasmin'].sel(time='2019')
+temperature = temperature_ds['tasmin'].sel(time='2019') - 273.15
 humidity = humidity_ds['hurs'].sel(time='2019')
 
 
