@@ -29,5 +29,5 @@ def shapefile_to_raster(shapefile_path, output_raster_path, pixel_size=0.1):
 
 # Example usage:
 shapefile_path = "../data/HydroRIVERS_v10_shp/reduced_HydroRIVERS_v10.shp"
-output_raster_path = "../data/HydroRIVERS_v10_shp/raster/reduced_HydroRIVERS_v10.tiff"
+output_raster_path = "../data/HydroRIVERS_v10_shp/raster/reduced_HydroRIVERS_v10.tif"
 shapefile_to_raster(shapefile_path, output_raster_path)
