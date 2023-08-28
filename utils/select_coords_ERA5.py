@@ -58,10 +58,18 @@ max_index_central_asia = return_max_coords(dataset.where(central_asia_mask)['nor
 max_index_europe = return_max_coords(dataset.where(europe_mask)['normalized_ndd'])
 
 # Print the results
-print("Max index in North America:", max_index_north_america)
-print("Max index in South America:", max_index_south_america)
-print("Max index in Central Asia:", max_index_central_asia)
-print("Max index in Europe:", max_index_europe)
+print("Max index in North America:", max_index_north_america, dataset.sel(lat = max_index_north_america[0], lon=
+                                                                          max_index_north_america[1], method
+                                                                          ='nearest').normalized_ndd.values)
+print("Max index in South America:", max_index_south_america, dataset.sel(lat = max_index_south_america[0], lon=
+                                                                          max_index_south_america[1], method
+                                                                          ='nearest').normalized_ndd.values)
+print("Max index in Central Asia:", max_index_central_asia, dataset.sel(lat = max_index_central_asia[0], lon=
+                                                                          max_index_central_asia[1], method
+                                                                          ='nearest').normalized_ndd.values)
+print("Max index in Europe:", max_index_europe, dataset.sel(lat = max_index_europe[0], lon=
+                                                                          max_index_europe[1], method
+                                                                          ='nearest').normalized_ndd.values)
 north_america_region =str(max_index_north_america[0] - 0.05) + "/" + str(max_index_north_america[1] - 0.05) +"/"+str(max_index_north_america[0] + 0.05) + "/" + str(max_index_north_america[1] + 0.05)
 print(north_america_region)
 
