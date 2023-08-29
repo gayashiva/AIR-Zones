@@ -7,7 +7,7 @@ def return_max_coords(xarraydata):
     return [float(max.lat.values), float(max.lon.values)]
 
 # Load the netCDF file
-dataset = xr.open_dataset('../output/mt+dis+temp+ndd.nc')
+dataset = xr.open_dataset('../output/mt+dis+temp+cndd.nc')
 
 # Define lat and lon ranges for each region
 north_america_lat_range = (20, 90)
@@ -52,24 +52,24 @@ europe_mask = (
 )
 
 # Apply the masks and find the maximum index coordinate for each region
-max_index_north_america = return_max_coords(dataset.where(north_america_mask)['normalized_ndd'])
-max_index_south_america = return_max_coords(dataset.where(south_america_mask)['normalized_ndd'])
-max_index_central_asia = return_max_coords(dataset.where(central_asia_mask)['normalized_ndd'])
-max_index_europe = return_max_coords(dataset.where(europe_mask)['normalized_ndd'])
+max_index_north_america = return_max_coords(dataset.where(north_america_mask)['normalized_cndd'])
+max_index_south_america = return_max_coords(dataset.where(south_america_mask)['normalized_cndd'])
+max_index_central_asia = return_max_coords(dataset.where(central_asia_mask)['normalized_cndd'])
+max_index_europe = return_max_coords(dataset.where(europe_mask)['normalized_cndd'])
 
 # Print the results
 print("Max index in North America:", max_index_north_america, dataset.sel(lat = max_index_north_america[0], lon=
                                                                           max_index_north_america[1], method
-                                                                          ='nearest').normalized_ndd.values)
+                                                                          ='nearest').normalized_cndd.values)
 print("Max index in South America:", max_index_south_america, dataset.sel(lat = max_index_south_america[0], lon=
                                                                           max_index_south_america[1], method
-                                                                          ='nearest').normalized_ndd.values)
+                                                                          ='nearest').normalized_cndd.values)
 print("Max index in Central Asia:", max_index_central_asia, dataset.sel(lat = max_index_central_asia[0], lon=
                                                                           max_index_central_asia[1], method
-                                                                          ='nearest').normalized_ndd.values)
+                                                                          ='nearest').normalized_cndd.values)
 print("Max index in Europe:", max_index_europe, dataset.sel(lat = max_index_europe[0], lon=
                                                                           max_index_europe[1], method
-                                                                          ='nearest').normalized_ndd.values)
+                                                                          ='nearest').normalized_cndd.values)
 north_america_region =str(max_index_north_america[0] - 0.05) + "/" + str(max_index_north_america[1] - 0.05) +"/"+str(max_index_north_america[0] + 0.05) + "/" + str(max_index_north_america[1] + 0.05)
 print(north_america_region)
 
